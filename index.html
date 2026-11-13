@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>한 줄 다이어리</title>
+  <link rel="icon" href="data:,">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-stone-100 text-stone-800">
+  <main class="mx-auto max-w-xl px-4 py-10">
+    <header class="mb-6">
+      <h1 class="text-sm font-medium text-stone-500">한 줄 다이어리</h1>
+      <p id="today" class="mt-1 text-3xl font-bold tracking-tight tabular-nums"></p>
+    </header>
+
+    <form id="entry-form" class="flex gap-2" novalidate>
+      <label for="entry-input" class="sr-only">오늘의 한 줄</label>
+      <input
+        id="entry-input"
+        type="text"
+        maxlength="100"
+        autocomplete="off"
+        placeholder="오늘의 한 줄을 적어 주세요"
+        class="min-w-0 flex-1 rounded-lg border border-stone-300 bg-white px-3 py-2 focus:border-stone-500 focus:outline-none focus:ring-2 focus:ring-stone-300"
+      >
+      <button
+        type="submit"
+        class="shrink-0 rounded-lg bg-stone-800 px-4 py-2 font-medium text-white hover:bg-stone-700 focus:outline-none focus:ring-2 focus:ring-stone-400"
+      >저장</button>
+    </form>
+
+    <p id="message" role="status" aria-live="polite" class="mt-2 hidden rounded-md px-3 py-2 text-sm"></p>
+
+    <section class="mt-8">
+      <h2 class="mb-2 text-sm font-medium text-stone-500">기록</h2>
+      <ul id="entry-list" class="max-h-[16.5rem] divide-y divide-stone-200 overflow-y-auto rounded-lg border border-stone-200 bg-white"></ul>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
